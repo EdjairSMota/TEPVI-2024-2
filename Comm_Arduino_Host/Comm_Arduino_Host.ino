@@ -1,18 +1,9 @@
 void setup() {
-    Serial.begin(9600); 
-    pinMode(13, OUTPUT); 
+    Serial.begin(9600); // Configura a taxa de dados em bauds
 }
 void loop() {
-    if (Serial.available() > 0) { 
-        String command = Serial.readStringUntil('\n');   
-        if (command == "LED ON") {
-          digitalWrite(13, HIGH); // Acende o LED
-          Serial.println("LED is ON");
-        } else if (command == "LED OFF") {
-          digitalWrite(13, LOW); // Apaga o LED
-          Serial.println("LED is OFF");
-        } else {
-            Serial.println(“Buguei!!!");
-        }
-    }
+    for (int i = 0; i <= 10; i++) {
+         Serial.println(i); // Envia o número sequencial
+         delay(500);       // Aguarda 500 ms
+     }
 }
